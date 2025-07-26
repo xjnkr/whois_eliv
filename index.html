@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>도메인 Whois 검색</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
 
+    .container {
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      font-size: 16px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    input[type="submit"] {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form onsubmit="return goToWhois()">
+      <input type="text" id="domain" placeholder="도메인 입력 (예: example.com)" required>
+      <input type="submit" value="검색">
+    </form>
+  </div>
+
+  <script>
+    function goToWhois() {
+      const domain = document.getElementById('domain').value.trim();
+      if (domain) {
+        window.location.href = `https://eliv.kr/Domain/Whois?DomainName=${encodeURIComponent(domain)}`;
+      }
+      return false; // 폼 제출 막기
+    }
+  </script>
+</body>
+</html>
