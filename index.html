@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>도메인 Whois 검색</title>
+  <title>Who are you</title>
   <style>
     body {
       background-color: #121212;
@@ -57,7 +57,7 @@
     function goToWhois() {
       const domain = document.getElementById('domain').value.trim();
       if (domain) {
-        window.location.href = `https://eliv.kr/Domain/Whois?DomainName=${encodeURIComponent(domain)}`;
+        window.location.href = `https://whois.com/whois/${encodeURIComponent(domain)}`;
       }
       return false; // 폼 제출 막기
     }
